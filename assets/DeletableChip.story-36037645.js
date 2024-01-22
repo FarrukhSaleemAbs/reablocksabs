@@ -1,0 +1,4 @@
+import{j as p}from"./jsx-runtime-9c4ae004.js";import{D as r}from"./DeletableChip-f30c7170.js";import"./index-1b03fe98.js";import"./Button-de41aa90.js";import"./index-91038615.js";import"./motion-a93435c4.js";import"./ButtonGroup-fb133ea9.js";import"./Chip-85e5b3a5.js";import"./RefreshIcon-686a4d31.js";const h={title:"Components/Elements/Chip/DeletableChip",component:r},e=()=>p.jsx(r,{onDelete:()=>console.log("on delete"),children:"Deletable"});var o,t,l;e.parameters={...e.parameters,docs:{...(o=e.parameters)==null?void 0:o.docs,source:{originalSource:`() => <DeletableChip onDelete={() => console.log('on delete')}>
+    Deletable
+  </DeletableChip>`,...(l=(t=e.parameters)==null?void 0:t.docs)==null?void 0:l.source}}};export{e as Simple,h as default};
+//# sourceMappingURL=DeletableChip.story-36037645.js.map

@@ -1,0 +1,14 @@
+import{j as r}from"./jsx-runtime-9c4ae004.js";import{T as e}from"./Text-21a4448a.js";import"./index-1b03fe98.js";import"./index-91038615.js";import"./Typography.module-7807aee1.js";const _={title:"Components/Typography/Text",component:e},o=()=>r.jsx(e,{children:"Hello world"}),t=()=>r.jsxs("div",{style:{display:"flex",flexDirection:"column",gap:5},children:[r.jsx(e,{children:"Default"}),r.jsx(e,{color:"primary",children:"Primary"}),r.jsx(e,{color:"secondary",children:"Secondary"}),r.jsx(e,{color:"error",children:"Error"}),r.jsx(e,{color:"success",children:"Success"}),r.jsx(e,{color:"warning",children:"Warning"}),r.jsx(e,{color:"info",children:"Info"})]}),s=()=>r.jsx(e,{variant:"mono",children:"Hello world"}),a=()=>r.jsx(e,{fontStyle:"bold",children:"Bold"}),c=()=>r.jsx(e,{fontStyle:"extraBold",children:"Extra Bold"}),l=()=>r.jsx(e,{fontStyle:"thin",children:"Thin"}),n=()=>r.jsx(e,{fontStyle:"italic",children:"Italic"});var i,d,x;o.parameters={...o.parameters,docs:{...(i=o.parameters)==null?void 0:i.docs,source:{originalSource:"() => <Text>Hello world</Text>",...(x=(d=o.parameters)==null?void 0:d.docs)==null?void 0:x.source}}};var m,p,T;t.parameters={...t.parameters,docs:{...(m=t.parameters)==null?void 0:m.docs,source:{originalSource:`() => <div style={{
+  display: 'flex',
+  flexDirection: 'column',
+  gap: 5
+}}>
+    <Text>Default</Text>
+    <Text color="primary">Primary</Text>
+    <Text color="secondary">Secondary</Text>
+    <Text color="error">Error</Text>
+    <Text color="success">Success</Text>
+    <Text color="warning">Warning</Text>
+    <Text color="info">Info</Text>
+  </div>`,...(T=(p=t.parameters)==null?void 0:p.docs)==null?void 0:T.source}}};var u,y,f;s.parameters={...s.parameters,docs:{...(u=s.parameters)==null?void 0:u.docs,source:{originalSource:'() => <Text variant="mono">Hello world</Text>',...(f=(y=s.parameters)==null?void 0:y.docs)==null?void 0:f.source}}};var h,S,j;a.parameters={...a.parameters,docs:{...(h=a.parameters)==null?void 0:h.docs,source:{originalSource:'() => <Text fontStyle="bold">Bold</Text>',...(j=(S=a.parameters)==null?void 0:S.docs)==null?void 0:j.source}}};var g,B,w;c.parameters={...c.parameters,docs:{...(g=c.parameters)==null?void 0:g.docs,source:{originalSource:'() => <Text fontStyle="extraBold">Extra Bold</Text>',...(w=(B=c.parameters)==null?void 0:B.docs)==null?void 0:w.source}}};var E,v,I;l.parameters={...l.parameters,docs:{...(E=l.parameters)==null?void 0:E.docs,source:{originalSource:'() => <Text fontStyle="thin">Thin</Text>',...(I=(v=l.parameters)==null?void 0:v.docs)==null?void 0:I.source}}};var D,H,b;n.parameters={...n.parameters,docs:{...(D=n.parameters)==null?void 0:D.docs,source:{originalSource:'() => <Text fontStyle="italic">Italic</Text>',...(b=(H=n.parameters)==null?void 0:H.docs)==null?void 0:b.source}}};export{a as Bold,t as Colors,c as ExtraBold,n as Italic,s as Monospace,o as Simple,l as Thin,_ as default};
+//# sourceMappingURL=Text.story-d2822fde.js.map

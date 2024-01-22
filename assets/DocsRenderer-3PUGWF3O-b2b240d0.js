@@ -1,0 +1,2 @@
+import{D as u,d as x}from"./chunk-S4VUQJ4A-9d1244f5.js";import"./iframe-fe8dba03.js";import"../sb-preview/runtime.js";import"./index-1b03fe98.js";import"./react-18-5df836b6.js";import"./index-6fd5a17b.js";import"./index-02959eb3.js";import"./chunk-6P7RB4HF-36fee097.js";import"./_commonjs-dynamic-modules-302442b1.js";import"./extends-98964cd2.js";import"./index-a9f1da4e.js";import"./isFunction-2d8a1518.js";import"./isSymbol-4e2c7bff.js";import"./index-356e4a49.js";export{u as DocsRenderer,x as defaultComponents};
+//# sourceMappingURL=DocsRenderer-3PUGWF3O-b2b240d0.js.map
