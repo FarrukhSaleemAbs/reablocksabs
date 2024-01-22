@@ -10,6 +10,7 @@ import {
   isSameDay,
   max as maxDate,
   min as minDate,
+  parseISO,
   setMonth,
   setYear,
   startOfDecade,
@@ -102,12 +103,12 @@ export const Calendar: FC<CalendarProps> = ({
     [value]
   );
   const rangeStart = useMemo(
-    () => value?.[0] ?? date ?? new Date(),
-    [date, value]
+    () => value?.[0] ?? parseISO('') ?? new Date(),
+    [value]
   );
   const rangeEnd = useMemo(
-    () => value?.[1] ?? date ?? new Date(),
-    [date, value]
+    () => value?.[1] ?? parseISO('') ?? new Date(),
+    [value]
   );
 
   const [viewValue, setViewValue] = useState<Date>(date || new Date());
@@ -208,6 +209,7 @@ export const Calendar: FC<CalendarProps> = ({
           className={css.leftArrow}
           disablePadding
           onClick={previousClickHandler}
+          style={{ color: 'var(--white)' }}
         >
           {previousArrow}
         </Button>
@@ -219,13 +221,28 @@ export const Calendar: FC<CalendarProps> = ({
           onClick={headerClickHandler}
         >
           <SmallHeading disableMargins>
-            {view === 'days' && (
-              <DateFormat
-                date={viewValue}
-                format={dateFormat}
-                allowToggle={false}
-              />
-            )}
+            {view === 'days' &&
+              (isRange ? (
+                <div className={css.calenderMonths}>
+                  <DateFormat
+                    date={sub(viewValue, { months: 1 })}
+                    format={dateFormat}
+                    allowToggle={false}
+                  />
+                  <DateFormat
+                    date={viewValue}
+                    format={dateFormat}
+                    allowToggle={false}
+                  />
+                </div>
+              ) : (
+                <DateFormat
+                  date={viewValue}
+                  format={dateFormat}
+                  allowToggle={false}
+                />
+              ))}
+
             {view === 'months' && <>{yearValue}</>}
             {view === 'years' && (
               <>
@@ -239,6 +256,7 @@ export const Calendar: FC<CalendarProps> = ({
           disablePadding
           disabled={disabled}
           onClick={nextClickHandler}
+          style={{ color: 'var(--white)' }}
         >
           {nextArrow}
         </Button>
@@ -255,19 +273,46 @@ export const Calendar: FC<CalendarProps> = ({
             scale: { type: animated ? 'tween' : false }
           }}
         >
-          {view === 'days' && (
-            <CalendarDays
-              value={viewValue}
-              min={min}
-              max={max}
-              disabled={disabled}
-              isRange={isRange}
-              current={isRange ? [rangeStart, rangeEnd] : date}
-              xAnimation={xAnimation}
-              animated={animated}
-              onChange={dateChangeHandler}
-            />
-          )}
+          {view === 'days' &&
+            (isRange ? (
+              <div className={css.daysContainer}>
+                <CalendarDays
+                  value={sub(viewValue, { months: 1 })}
+                  min={min}
+                  max={max}
+                  disabled={disabled}
+                  isRange={isRange}
+                  current={[rangeStart, rangeEnd]}
+                  xAnimation={xAnimation}
+                  animated={animated}
+                  onChange={dateChangeHandler}
+                />
+                <CalendarDays
+                  value={viewValue}
+                  min={min}
+                  max={max}
+                  disabled={disabled}
+                  isRange={isRange}
+                  current={[rangeStart, rangeEnd]}
+                  xAnimation={xAnimation}
+                  animated={animated}
+                  onChange={dateChangeHandler}
+                />
+              </div>
+            ) : (
+              <CalendarDays
+                value={viewValue}
+                min={min}
+                max={max}
+                disabled={disabled}
+                isRange={isRange}
+                current={date}
+                xAnimation={xAnimation}
+                animated={animated}
+                onChange={dateChangeHandler}
+              />
+            ))}
+
           {view === 'months' && (
             <CalendarMonths
               value={monthValue}
@@ -292,8 +337,8 @@ export const Calendar: FC<CalendarProps> = ({
 };
 
 Calendar.defaultProps = {
-  previousArrow: '←',
-  nextArrow: '→',
+  previousArrow: '<',
+  nextArrow: '>',
   animated: true,
   dateFormat: 'MMMM yyyy',
   range: [new Date(), new Date()]
